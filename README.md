@@ -8,7 +8,7 @@
 
  ### build
 
-This app uses `vite` as build-tool and requires npm version `>=8`
+This app uses `vite` as build-tool and requires npm version `>=8` and node version `>18`
 
 ```bash
 npm install

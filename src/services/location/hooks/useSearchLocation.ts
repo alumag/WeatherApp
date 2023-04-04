@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../../redux/store';
-import { useSearchQuery } from '../redux/searchApi';
-import { locationActions } from '../redux/locationSlice';
-import { WeatherApiLocationObject } from '../redux/types';
+import { useSearchQuery, locationActions, WeatherApiLocationObject } from '../redux';
 
 export const useSearchLocations = (query: string) => {
   const dispatch = useAppDispatch();

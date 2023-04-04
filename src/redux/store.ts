@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { locationReducer } from '../services/location/redux/locationSlice';
-import { searchApi } from '../services/location/redux/searchApi';
+import { locationReducer, searchApi } from '../services/location/redux';
 
 export const store = configureStore({
   reducer: {

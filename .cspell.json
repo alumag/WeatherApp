@@ -1,0 +1,6 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": ["avenir"],
+  "ignorePaths": ["node_modules/**", "dist/**", "*.svg"]
+}

@@ -1,6 +1,6 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["avenir"],
+  "words": ["avenir", "reduxjs"],
   "ignorePaths": ["node_modules/**", "dist/**", "*.svg"]
 }

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../../redux/store';
 import { useSearchQuery, locationActions, WeatherApiLocationObject } from '../redux';
@@ -13,22 +14,23 @@ export const useSearchLocations = (query: string) => {
     if (isLoading) {
       setLocations(undefined);
     } else if (data && !isError) {
-      setLocations(data.map(({ id, name, country }) => ({ id, name, country })));
+      setLocations(
+        _.uniqBy(data, 'name').map(({ id, name, country }) => ({
+          id,
+          name,
+          country,
+        })),
+      );
     } else {
       // TODO: handle errors
     }
   }, [data, isLoading, isError]);
 
   const selectLocation = (locationId: number) => {
-    console.log(locationId);
     const locationData = data?.find((item) => item.id === locationId);
     if (!locationData) {
-      console.log(locationData);
-
       return;
     }
-
-    console.log(locationData);
 
     dispatch(locationActions.setLocation(locationData));
   };

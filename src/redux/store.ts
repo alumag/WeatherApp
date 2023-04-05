@@ -1,13 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { locationReducer, searchApi } from '../services/location/redux';
+import { realtimeApi } from '../services/weather/redux';
 
 export const store = configureStore({
   reducer: {
     location: locationReducer,
     [searchApi.reducerPath]: searchApi.reducer,
+    [realtimeApi.reducerPath]: realtimeApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([searchApi.middleware]),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat([searchApi.middleware, realtimeApi.middleware]),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

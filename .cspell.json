@@ -2,5 +2,5 @@
   "version": "0.2",
   "language": "en",
   "words": ["avenir", "reduxjs", "localtime"],
-  "ignorePaths": ["node_modules/**", "dist/**", "*.svg"]
+  "ignorePaths": ["node_modules/**", "dist/**", "*.svg", "src/services/weather/redux/types.ts"]
 }

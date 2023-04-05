@@ -1,14 +1,24 @@
 # WeatherApp
 
- simple weather app in React that displays the current weather and forecast for a location using Yahoo Weather API.
+ simple weather app in React that displays the current weather and forecast for a location using [WeatherAPI.com](https://www.WeatherApi.com/docs).
 
- ## development
+## development
 
  > track development issues: [WeatherApp issues](https://github.com/alumag/WeatherApp/issues)
 
- ### build
+### preequisites
+
+Generate an API key for [`WeatherApi.com`](https://www.WeatherApi.com/docs/#authentication) and export the key as environment variable:
+
+```
+VITE_CLIENT_KEY=<KEY>
+```
+
+### build
 
 This app uses `vite` as build-tool and requires npm version `>=8` and node version `>18`
+
+
 
 ```bash
 npm install

@@ -1,6 +1,6 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["avenir", "reduxjs", "localtime", "preequisites"],
+  "words": ["avenir", "reduxjs", "localtime", "preequisites", "antd"],
   "ignorePaths": ["node_modules/**", "dist/**", "*.svg", "src/services/weather/redux/types.ts", "src/services/forecast/redux/types.ts"]
 }

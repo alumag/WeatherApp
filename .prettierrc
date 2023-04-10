@@ -7,6 +7,6 @@
   "printWidth": 100,
   "bracketSameLine": false,
   "useTabs": false,
-  "arrowParens": "always",
+  "arrowParens": "avoid",
   "endOfLine": "auto"
 }

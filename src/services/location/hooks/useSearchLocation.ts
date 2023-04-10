@@ -27,7 +27,7 @@ export const useSearchLocations = (query: string) => {
   }, [data, isLoading, isError]);
 
   const selectLocation = (locationId: number) => {
-    const locationData = data?.find((item) => item.id === locationId);
+    const locationData = data?.find(item => item.id === locationId);
     if (!locationData) {
       return;
     }

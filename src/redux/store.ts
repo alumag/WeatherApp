@@ -13,7 +13,7 @@ export const store = configureStore({
     [realtimeApi.reducerPath]: realtimeApi.reducer,
     [forecastApi.reducerPath]: forecastApi.reducer,
   },
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat([
       searchApi.middleware,
       realtimeApi.middleware,

@@ -6,7 +6,7 @@ const SEARCH_API_BASE_URL = '/api';
 export const searchApi = createApi({
   reducerPath: 'searchApi',
   baseQuery: fetchBaseQuery({ baseUrl: SEARCH_API_BASE_URL }),
-  endpoints: (builder) => ({
+  endpoints: builder => ({
     search: builder.query<WeatherApiLocationObject[], string>({
       query: (query: string) => {
         return {

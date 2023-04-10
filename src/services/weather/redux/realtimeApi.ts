@@ -6,7 +6,7 @@ const REALTIME_API_BASE_URL = '/api';
 export const realtimeApi = createApi({
   reducerPath: 'realtimeApi',
   baseQuery: fetchBaseQuery({ baseUrl: REALTIME_API_BASE_URL }),
-  endpoints: (builder) => ({
+  endpoints: builder => ({
     getCurrent: builder.query<WeatherApiCurrentResponse, string>({
       query: (location: string) => {
         return {

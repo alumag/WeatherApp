@@ -11,7 +11,7 @@ interface Props {
 }
 export const Weather: React.FC<Props> = ({ location }) => {
   const { isLoading, currentWeather, refetch } = useCurrentWeather(location);
-  const temperatureUnit = useTemperatureUnit();
+  const { temperatureUnit } = useTemperatureUnit();
 
   const reload = useMemo(() => {
     return (

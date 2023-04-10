@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { WeatherApiLocationObject } from './types';
 
-const SEARCH_API_BASE_URL = 'https://api.weatherapi.com/v1';
+const SEARCH_API_BASE_URL = '/api';
 
 export const searchApi = createApi({
   reducerPath: 'searchApi',
@@ -13,7 +13,6 @@ export const searchApi = createApi({
           url: '/search.json',
           params: {
             q: query,
-            key: import.meta.env.VITE_CLIENT_KEY,
           },
         };
       },

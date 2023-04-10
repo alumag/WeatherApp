@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { WeatherApiCurrentResponse } from './types';
 
-const REALTIME_API_BASE_URL = 'https://api.weatherapi.com/v1';
+const REALTIME_API_BASE_URL = '/api';
 
 export const realtimeApi = createApi({
   reducerPath: 'realtimeApi',
@@ -13,7 +13,6 @@ export const realtimeApi = createApi({
           url: '/current.json',
           params: {
             q: location,
-            key: import.meta.env.VITE_CLIENT_KEY,
           },
         };
       },

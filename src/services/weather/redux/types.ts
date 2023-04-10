@@ -1,5 +1,11 @@
 import { WeatherApiLocationObject } from '../../location/redux';
 
+export interface WeatherApiCondition {
+  text: string; // Weather condition text
+  icon: string; // Weather icon url
+  code: number; // Weather condition unique code.
+}
+
 export interface WeatherApiCurrentObject {
   last_updated: string; // Local time when the real time data was updated.
   last_updated_epoch: number; // (int) Local time when the real time data was updated in unix time.
@@ -7,9 +13,8 @@ export interface WeatherApiCurrentObject {
   temp_f: number; // (decimal) Temperature in fahrenheit
   feelslike_c: number; // (decimal) Feels like temperature in celsius
   feelslike_f: number; // (decimal) Feels like temperature in fahrenheit
-  'condition:text': string; // Weather condition text
-  'condition:icon': string; // Weather icon url
-  'condition:code': number; // Weather condition unique code.
+
+  condition: WeatherApiCondition;
   wind_mph: number; // (decimal) Wind speed in miles per hour
   wind_kph: number; // (decimal) Wind speed in kilometer per hour
   wind_degree: number; // (int) Wind direction in degrees

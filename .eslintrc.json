@@ -19,14 +19,17 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "import", "prettier", "jsx-a11y"],
+  "root": true,
   "rules": {
-    "react/react-in-jsx-scope": ["off"],
-    "react/jsx-uses-react": ["off"],
-    "react/jsx-props-no-spreading": ["warn"],
-    "react/no-unescaped-entities": ["off"],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "react/no-unescaped-entities": "off",
 
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+
+    "arrow-parens": ["error", "as-needed"],
 
     "prettier/prettier": [
       "warn",

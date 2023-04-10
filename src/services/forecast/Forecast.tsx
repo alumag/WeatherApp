@@ -29,6 +29,7 @@ export const Forecast: React.FC<Props> = ({ location }) => {
     return forecast.map(({ date, day }) => {
       return (
         <Day
+          key={date}
           date={date}
           maxtemp_c={day.maxtemp_c}
           mintemp_c={day.mintemp_c}

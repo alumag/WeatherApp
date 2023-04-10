@@ -1,0 +1,10 @@
+.spinnerContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.spinner {
+  width: 2em;
+  height: 2em;
+}

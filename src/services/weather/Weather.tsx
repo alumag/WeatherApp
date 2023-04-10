@@ -1,6 +1,7 @@
 import { ReloadOutlined } from '@ant-design/icons';
 import { Button, Card, Col, Empty, Row, Statistic, Typography } from 'antd';
 import { useMemo } from 'react';
+import { useTemperatureUnit } from '../../hooks/useTemperatureUnit';
 import Temperature from './components/temperature';
 import Title from './components/title';
 import { useCurrentWeather } from './hooks';
@@ -9,15 +10,16 @@ interface Props {
   location: string;
 }
 export const Weather: React.FC<Props> = ({ location }) => {
-  const { currentWeather, refetch } = useCurrentWeather(location);
+  const { isLoading, currentWeather, refetch } = useCurrentWeather(location);
+  const temperatureUnit = useTemperatureUnit();
 
   const reload = useMemo(() => {
     return (
       <Button onClick={refetch} type='link'>
-        <ReloadOutlined />
+        <ReloadOutlined spin={isLoading} />
       </Button>
     );
-  }, [refetch]);
+  }, [refetch, isLoading]);
 
   const title = useMemo(() => {
     if (!currentWeather) {
@@ -41,7 +43,7 @@ export const Weather: React.FC<Props> = ({ location }) => {
             temp_f={temp_f}
             feelslike_c={feelslike_c}
             feelslike_f={feelslike_f}
-            unit='celsius'
+            unit={temperatureUnit}
           />
         </Col>
         <Col>
@@ -52,7 +54,7 @@ export const Weather: React.FC<Props> = ({ location }) => {
         </Col>
       </Row>
     );
-  }, [currentWeather]);
+  }, [currentWeather, temperatureUnit]);
 
   return (
     <Card title={title} extra={reload}>

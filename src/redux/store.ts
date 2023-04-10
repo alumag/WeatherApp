@@ -3,9 +3,11 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { forecastApi } from '../services/forecast/redux';
 import { locationReducer, searchApi } from '../services/location/redux';
 import { realtimeApi } from '../services/weather/redux';
+import { appReducer } from './appSlice';
 
 export const store = configureStore({
   reducer: {
+    app: appReducer,
     location: locationReducer,
     [searchApi.reducerPath]: searchApi.reducer,
     [realtimeApi.reducerPath]: realtimeApi.reducer,

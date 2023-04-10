@@ -16,5 +16,5 @@ export const useCurrentWeather = (location: string) => {
     }
   }, [data, isLoading, isError]);
 
-  return { currentWeather, refetch };
+  return { isLoading, currentWeather, refetch };
 };

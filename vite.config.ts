@@ -13,7 +13,7 @@ export default ({ mode }) => {
         '/api': {
           target: 'https://api.weatherapi.com/v1',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '') + `&KEY=${env.VITE_CLIENT_KEY}`,
+          rewrite: (path) => path.replace(/^\/api/, '') + `&key=${env.VITE_CLIENT_KEY}`,
         },
       },
     },

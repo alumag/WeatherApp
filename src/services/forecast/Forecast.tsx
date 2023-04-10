@@ -4,7 +4,6 @@ import { useTemperatureUnit } from '../../hooks/useTemperatureUnit';
 import Day from './components/day';
 import { useForecast } from './hooks';
 import Title from './components/title';
-import style from './Forecast.module.css';
 import { ReloadOutlined } from '@ant-design/icons';
 
 interface Props {
@@ -26,8 +25,6 @@ export const Forecast: React.FC<Props> = ({ location }) => {
     if (!forecast || forecast.length === 0) {
       return <Empty />;
     }
-
-    console.log(forecast);
 
     return forecast.map(({ date, day }) => {
       return (

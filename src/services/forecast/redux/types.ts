@@ -1,3 +1,5 @@
+import { WeatherApiCondition } from '../../common/types';
+
 export interface WeatherApiForecastDay {
   maxtemp_c: number; // (decimal) Maximum temperature in celsius for the day.
   maxtemp_f: number; // (decimal) Maximum temperature in fahrenheit for the day
@@ -12,9 +14,8 @@ export interface WeatherApiForecastDay {
   avgvis_km: number; // (decimal) Average visibility in kilometer
   avgvis_miles: number; // (decimal) Average visibility in miles
   avghumidity: number; // (int) Average humidity as percentage
-  'condition:text': string; // Weather condition text
-  'condition:icon': string; // Weather condition icon
-  'condition:code': number; // (int) Weather condition code
+
+  condition: WeatherApiCondition;
   uv: number; // (decimal) UV Index
 }
 

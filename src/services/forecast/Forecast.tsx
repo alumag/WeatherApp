@@ -44,7 +44,7 @@ export const Forecast: React.FC<Props> = ({ location }) => {
   }, [temperatureUnit, forecast]);
 
   return (
-    <Card className={style.forecastContainer} title={<Title />} extra={reload}>
+    <Card title={<Title />} extra={reload}>
       <Row>{content}</Row>
     </Card>
   );

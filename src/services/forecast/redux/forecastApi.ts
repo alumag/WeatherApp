@@ -7,7 +7,7 @@ export const forecastApi = createApi({
   reducerPath: 'forecastApi',
   baseQuery: fetchBaseQuery({ baseUrl: FORECAST_API_BASE_URL }),
   endpoints: (builder) => ({
-    getForecast: builder.query<WeatherApiForecastResponse[], string>({
+    getForecast: builder.query<WeatherApiForecastResponse, string>({
       query: (query: string) => {
         return {
           url: '/forecast.json',

@@ -1,3 +1,7 @@
+import { WeatherApiCondition } from '../../common/types';
+import { WeatherApiLocationObject } from '../../location/redux';
+import { WeatherApiCurrentObject } from '../../weather/redux';
+
 export interface WeatherApiForecastDay {
   maxtemp_c: number; // (decimal) Maximum temperature in celsius for the day.
   maxtemp_f: number; // (decimal) Maximum temperature in fahrenheit for the day
@@ -12,16 +16,21 @@ export interface WeatherApiForecastDay {
   avgvis_km: number; // (decimal) Average visibility in kilometer
   avgvis_miles: number; // (decimal) Average visibility in miles
   avghumidity: number; // (int) Average humidity as percentage
-  'condition:text': string; // Weather condition text
-  'condition:icon': string; // Weather condition icon
-  'condition:code': number; // (int) Weather condition code
+
+  condition: WeatherApiCondition;
   uv: number; // (decimal) UV Index
 }
 
-export interface WeatherApiForecastResponse {
+export interface WeatherApiForecast {
   date: string;
   date_epoch: number;
   day: WeatherApiForecastDay;
   astro: unknown;
   hour: unknown;
+}
+
+export interface WeatherApiForecastResponse {
+  location: WeatherApiLocationObject;
+  current: WeatherApiCurrentObject;
+  forecast: { forecastday: WeatherApiForecast[] };
 }

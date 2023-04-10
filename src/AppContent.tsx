@@ -1,4 +1,5 @@
-import { Typography } from 'antd';
+import { Row, Typography } from 'antd';
+import { Forecast } from './services/forecast/Forecast';
 import { WeatherApiLocationObject } from './services/location/redux';
 import { Weather } from './services/weather/Weather';
 
@@ -9,7 +10,10 @@ export const AppContent: React.FC<Props> = ({ location }) => {
   return (
     <>
       <Typography.Title>{location.name}</Typography.Title>
-      <Weather location={location.url} />
+      <Row>
+        <Weather location={location.url} />
+        <Forecast location={location.url} />
+      </Row>
     </>
   );
 };

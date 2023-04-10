@@ -1,6 +1,6 @@
 import { Typography } from 'antd';
 import { useMemo } from 'react';
-import { WeatherApiCondition } from '../../redux';
+import { WeatherApiCondition } from '../../../common/types';
 import style from './Title.module.css';
 interface Props {
   condition?: WeatherApiCondition;

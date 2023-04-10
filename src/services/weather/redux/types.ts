@@ -1,10 +1,5 @@
+import { WeatherApiCondition } from '../../common/types';
 import { WeatherApiLocationObject } from '../../location/redux';
-
-export interface WeatherApiCondition {
-  text: string; // Weather condition text
-  icon: string; // Weather icon url
-  code: number; // Weather condition unique code.
-}
 
 export interface WeatherApiCurrentObject {
   last_updated: string; // Local time when the real time data was updated.

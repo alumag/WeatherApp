@@ -9,7 +9,7 @@ export const AppContent: React.FC<Props> = ({ location }) => {
   return (
     <>
       <Typography.Title>{location.name}</Typography.Title>
-      <Weather location={String(location.id)} />
+      <Weather location={location.url} />
     </>
   );
 };

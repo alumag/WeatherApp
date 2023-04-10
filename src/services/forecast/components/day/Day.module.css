@@ -1,0 +1,16 @@
+.dayContainer {
+  padding: 0.5em;
+}
+
+.temperature > div > span {
+  font-weight: normal;
+  font-size: 0.7em;
+}
+
+.maxTemp > div > span {
+  color: red;
+}
+
+.minTemp > div > span {
+  color: blue;
+}

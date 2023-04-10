@@ -1,4 +1,6 @@
 import { WeatherApiCondition } from '../../common/types';
+import { WeatherApiLocationObject } from '../../location/redux';
+import { WeatherApiCurrentObject } from '../../weather/redux';
 
 export interface WeatherApiForecastDay {
   maxtemp_c: number; // (decimal) Maximum temperature in celsius for the day.
@@ -19,10 +21,16 @@ export interface WeatherApiForecastDay {
   uv: number; // (decimal) UV Index
 }
 
-export interface WeatherApiForecastResponse {
+export interface WeatherApiForecast {
   date: string;
   date_epoch: number;
   day: WeatherApiForecastDay;
   astro: unknown;
   hour: unknown;
+}
+
+export interface WeatherApiForecastResponse {
+  location: WeatherApiLocationObject;
+  current: WeatherApiCurrentObject;
+  forecast: { forecastday: WeatherApiForecast[] };
 }
